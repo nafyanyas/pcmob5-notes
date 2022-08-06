@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -6,10 +7,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { PROFILE_SCREEN } from "../constants";
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login to your account</Text>
@@ -29,14 +33,17 @@ export default function LoginScreen() {
         onChangeText={(pw) => setPassword(pw)}
       />
 
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate(PROFILE_SCREEN);
+        }}
+      >
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
     </View>
   );
 }
-
-export const LOGIN_SCREEN = "LOGIN_SCREEN";
 
 const styles = StyleSheet.create({
   container: {
