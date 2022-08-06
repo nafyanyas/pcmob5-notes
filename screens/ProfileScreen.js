@@ -6,7 +6,7 @@ import { LOGIN_SCREEN } from "../constants";
 import axios from "axios";
 
 	// TODO: Change to your user name	
-const API = "https://pcmob5-blog-api.<insert-username>.repl.co";
+const API = "https://pcmob5-blog-api-1.ubaidullaadam.repl.co";
 const API_WHOAMI = "/whoami";
 
 export default function ProfileScreen() {
